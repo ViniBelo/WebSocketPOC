@@ -1,4 +1,4 @@
-package br.com.vinibelo.websocketpoc;
+package br.com.vinibelo.websocketpoc.controller.ws.v1;
 
 import br.com.vinibelo.websocketpoc.model.UserMessage;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
