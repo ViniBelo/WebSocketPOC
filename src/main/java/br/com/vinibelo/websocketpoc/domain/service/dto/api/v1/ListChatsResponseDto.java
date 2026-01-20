@@ -1,4 +1,4 @@
-package br.com.vinibelo.websocketpoc.controller.api.v1.chats.dto;
+package br.com.vinibelo.websocketpoc.domain.service.dto.api.v1;
 
 import java.util.UUID;
 

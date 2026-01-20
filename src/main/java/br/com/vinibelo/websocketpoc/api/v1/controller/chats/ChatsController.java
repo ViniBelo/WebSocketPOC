@@ -1,8 +1,8 @@
-package br.com.vinibelo.websocketpoc.controller.api.v1.chats;
+package br.com.vinibelo.websocketpoc.api.v1.controller.chats;
 
-import br.com.vinibelo.websocketpoc.controller.api.v1.chats.dto.CreateChatRequestDto;
-import br.com.vinibelo.websocketpoc.controller.api.v1.chats.dto.ListChatsResponseDto;
-import br.com.vinibelo.websocketpoc.service.ChatsService;
+import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.CreateChatRequestDto;
+import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.ListChatsResponseDto;
+import br.com.vinibelo.websocketpoc.domain.service.ChatsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

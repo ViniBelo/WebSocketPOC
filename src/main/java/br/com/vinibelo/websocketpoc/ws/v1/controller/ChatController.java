@@ -1,9 +1,9 @@
-package br.com.vinibelo.websocketpoc.controller.ws.v1;
+package br.com.vinibelo.websocketpoc.ws.v1.controller;
 
-import br.com.vinibelo.websocketpoc.entity.Chat;
-import br.com.vinibelo.websocketpoc.model.UserMessage;
-import br.com.vinibelo.websocketpoc.service.ChatsService;
-import br.com.vinibelo.websocketpoc.service.MessagesService;
+import br.com.vinibelo.websocketpoc.domain.service.dto.ws.v1.ChatMessageDto;
+import br.com.vinibelo.websocketpoc.persistence.entity.Chat;
+import br.com.vinibelo.websocketpoc.domain.service.ChatsService;
+import br.com.vinibelo.websocketpoc.domain.service.MessagesService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -23,8 +23,8 @@ public class ChatController {
 
     @MessageMapping("/chat/{chatId}")
     @SendTo("/topic/chat/{chatId}")
-    public UserMessage sendMessage (@DestinationVariable UUID chatId,
-                                    @Payload @Valid UserMessage message) throws ChangeSetPersister.NotFoundException {
+    public ChatMessageDto sendMessage (@DestinationVariable UUID chatId,
+                                       @Payload @Valid ChatMessageDto message) throws ChangeSetPersister.NotFoundException {
         Chat chat = chatsService.findById(chatId);
         System.out.println(message);
         messagesService.saveMessage(message.getContent(), chat);

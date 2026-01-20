@@ -1,4 +1,4 @@
-package br.com.vinibelo.websocketpoc.entity;
+package br.com.vinibelo.websocketpoc.persistence.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

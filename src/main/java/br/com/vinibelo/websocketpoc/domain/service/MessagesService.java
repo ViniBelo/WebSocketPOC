@@ -1,8 +1,8 @@
-package br.com.vinibelo.websocketpoc.service;
+package br.com.vinibelo.websocketpoc.domain.service;
 
-import br.com.vinibelo.websocketpoc.entity.Chat;
-import br.com.vinibelo.websocketpoc.entity.Message;
-import br.com.vinibelo.websocketpoc.repository.MessagesRepository;
+import br.com.vinibelo.websocketpoc.persistence.entity.Chat;
+import br.com.vinibelo.websocketpoc.persistence.entity.Message;
+import br.com.vinibelo.websocketpoc.persistence.repository.MessagesRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

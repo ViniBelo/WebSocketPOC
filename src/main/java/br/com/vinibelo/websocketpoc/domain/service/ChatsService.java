@@ -1,8 +1,8 @@
-package br.com.vinibelo.websocketpoc.service;
+package br.com.vinibelo.websocketpoc.domain.service;
 
-import br.com.vinibelo.websocketpoc.controller.api.v1.chats.dto.ListChatsResponseDto;
-import br.com.vinibelo.websocketpoc.entity.Chat;
-import br.com.vinibelo.websocketpoc.repository.ChatsRepository;
+import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.ListChatsResponseDto;
+import br.com.vinibelo.websocketpoc.persistence.entity.Chat;
+import br.com.vinibelo.websocketpoc.persistence.repository.ChatsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;

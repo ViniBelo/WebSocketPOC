@@ -1,4 +1,4 @@
-package br.com.vinibelo.websocketpoc.config;
+package br.com.vinibelo.websocketpoc.ws.v1.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

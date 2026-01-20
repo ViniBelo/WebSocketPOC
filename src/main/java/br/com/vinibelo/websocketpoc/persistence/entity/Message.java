@@ -1,10 +1,8 @@
-package br.com.vinibelo.websocketpoc.entity;
+package br.com.vinibelo.websocketpoc.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
 
 @Getter
 @Entity(name = "messages")
