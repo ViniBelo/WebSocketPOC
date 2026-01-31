@@ -1,6 +1,7 @@
 package br.com.vinibelo.websocketpoc.domain.service;
 
-import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.ListChatsResponseDto;
+import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.response.CreateChatResponseDto;
+import br.com.vinibelo.websocketpoc.domain.service.dto.api.v1.response.ListChatsResponseDto;
 import br.com.vinibelo.websocketpoc.persistence.entity.Chat;
 import br.com.vinibelo.websocketpoc.persistence.repository.ChatsRepository;
 import lombok.AllArgsConstructor;
@@ -16,9 +17,10 @@ import java.util.UUID;
 public class ChatsService {
     private final ChatsRepository chatsRepository;
 
-    public void createChat(String name) {
+    public CreateChatResponseDto createChat(String name) {
         Chat chat = new Chat(name);
         chatsRepository.save(chat);
+        return new CreateChatResponseDto(chat.getId(), chat.getName());
     }
 
     public Chat findById(UUID id) throws ChangeSetPersister.NotFoundException {
