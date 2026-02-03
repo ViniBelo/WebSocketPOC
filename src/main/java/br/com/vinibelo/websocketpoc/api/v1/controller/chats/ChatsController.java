@@ -16,11 +16,14 @@ import java.util.List;
 @RestController()
 @RequestMapping("api/v1/chats")
 @AllArgsConstructor
+@CrossOrigin("*")
 public class ChatsController {
     private final ChatsService chatsService;
 
     /**
-     * Creates chat; returns URI to created resource
+     * Creates a chat;
+     * @param createChatRequestDto requires name (min = 4, max = 255)
+     * @return ResponseEntity<CreateChatResponseDto>
      */
     @PostMapping()
     public ResponseEntity<CreateChatResponseDto> createChat(@RequestBody @Valid CreateChatRequestDto createChatRequestDto) {
@@ -36,10 +39,17 @@ public class ChatsController {
                 .body(chatReponse);
     }
 
+    /**
+     * Lists chats;
+     * @param perPage chats per page
+     * @param page current page
+     * @return ResponseEntity<ListChatsResponseDto>
+     */
     @GetMapping()
-    public ResponseEntity<List<ListChatsResponseDto>> listChats() {
-        return ResponseEntity.ok(
-                chatsService.listChats()
-        );
+    public ResponseEntity<ListChatsResponseDto> listChats(
+            @RequestParam(name = "perPage", required = false, defaultValue = "10") Integer perPage,
+            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page
+    ) {
+        return ResponseEntity.ok(chatsService.listChats(perPage, page));
     }
 }
